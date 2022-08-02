@@ -4,7 +4,8 @@ export const counterSlice = createSlice({
   name: "movieData",
   initialState: {
     movies: [],
-    size: true
+    size: true,
+    search: ""
   },
   reducers: {
     addMovies: (state, action) => {
@@ -16,10 +17,13 @@ export const counterSlice = createSlice({
     },
     size: (state, action) => {
       state.size = action.payload
+    },
+    filterMovies: (state, action) => {
+      state.search = action.payload;
     }
   }
 });
 
-export const { addMovies, removeMovies, size } = counterSlice.actions;
+export const { addMovies, removeMovies, filterMovies, size } = counterSlice.actions;
 
 export default counterSlice.reducer;

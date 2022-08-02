@@ -6,8 +6,7 @@ import { faBucket } from "@fortawesome/free-solid-svg-icons"
 
 function Movieslist() {
   const dispatch = useDispatch()
-  const { movies } = useSelector((state) => state.movieData)
-  const { search } = useSelector((state) => state.searchValue)
+  const { movies, search } = useSelector((state) => state.movieData)
   const [filteredList, setFilteredList] = useState(movies)
 
   useEffect(() => {
