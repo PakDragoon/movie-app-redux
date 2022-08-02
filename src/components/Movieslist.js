@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { size, removeMovies } from "../redux/movie"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faBucket } from "@fortawesome/free-solid-svg-icons"
+import { faTrash } from "@fortawesome/free-solid-svg-icons"
 
 function Movieslist() {
   const dispatch = useDispatch()
@@ -40,12 +40,12 @@ function Movieslist() {
                   <h3 className="my-3">{row.movieName}</h3>
                   <p className="my-0">Ratings: {row.movieRating}/100</p>
                 </div>
-                <div className="layout-row my-auto mr-20">
-                  <p className="justify-content-end">{row.movieDuration} Hrs</p>
+                <div className="layout-row my-auto ml-20">
+                  <h3 className="justify-content-end">{row.movieDuration} Hrs</h3>
                 </div>
                 <div>
                   <a href="#top" onClick={() => dispatch(removeMovies(row.id))}>
-                    <FontAwesomeIcon style={{ color: "red" }} icon={faBucket} />
+                    <FontAwesomeIcon style={{ color: "red" }} icon={faTrash} />
                   </a>
                 </div>
               </li>
